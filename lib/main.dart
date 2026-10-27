@@ -15,7 +15,19 @@ class LayoutRulesExample extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Tiga Aturan Layout Flutter'),
       ),
-      body: MyPages(),
+      body: SingleChildScrollView(
+      // agar seluruh konten bisa discroll ke bawah jika melebihi layar
+        child: Column(
+          // mengatur posisi anak ke sisi kiri secara horizontal
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // menampung tiga halaman yg ditampilkan berurutan dri atas ke bawah
+          children: const [
+            MyPages1(),
+            MyPages2(),
+            MyPages3(),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -138,7 +150,7 @@ class MyPages3 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                '3. Aturan Posisi (dengan Align)',
+                '4. Aturan Posisi (dengan Align)',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 10),
